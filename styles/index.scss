@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+// PAGES
+@import "pages/app";
+@import "pages/add-todo";
+
+* {
+  color: $dark-text;
+  font-family: "Poppins";
+  box-sizing: border-box;
+  margin: 0;
+  user-select: none;
+  transition: 0.2s;
+}
+
+body {
+  background-color: $light-bg;
+}
+
+.layout {
+  & > .content {
+    max-width: 1000px;
+    padding: spacing(3) spacing(2);
+    margin: auto;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: spacing(2);
+  background-color: $primary-bg;
+  .brand {
+    color: $light-text;
+    flex-grow: 1;
+  }
+  .links {
+    a {
+      color: $light-text;
+      text-decoration: none;
+      margin-left: spacing(2);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: spacing(3) spacing(2);
+  border-top: 1px solid lightgray;
+}

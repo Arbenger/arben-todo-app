@@ -1,0 +1,75 @@
+.app {
+  .todo-list {
+    .header {
+      @include flex-start-center;
+      .title {
+        margin-right: spacing(1);
+      }
+      .badge {
+        @include flex-center;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: $secondary-bg;
+        h5 {
+          color: white;
+        }
+      }
+    }
+    .todo-menu {
+      padding: 0;
+      .todo-item {
+        @include flex-start-center;
+        background-color: white;
+        padding: spacing(2);
+        list-style: none;
+        border-radius: 2px;
+        margin-bottom: spacing(1);
+        &[data-status="completed"] {
+          border-left: 6px solid $success-bg-hover;
+        }
+        &[data-status="incomplete"] {
+          border-left: 6px solid $primary-bg;
+        }
+        .content {
+          flex-grow: 1;
+        }
+        .actions {
+          display: flex;
+          button {
+            color: $light-text;
+            border: none;
+            border-radius: 3px;
+            margin-left: spacing(1);
+            padding: spacing(1);
+            cursor: pointer;
+            &.btn-complete {
+              background-color: $success-bg;
+              &:hover {
+                background-color: $success-bg-hover;
+              }
+            }
+            &.btn-undo {
+              background-color: $secondary-bg;
+              &:hover {
+                background-color: $secondary-bg-hover;
+              }
+            }
+            &.btn-delete {
+              background-color: $danger-bg;
+              &:hover {
+                background-color: $danger-bg-hover;
+              }
+            }
+          }
+          @media (max-width: 500px) {
+            flex-direction: column;
+            button:first-child {
+              margin-bottom: spacing(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}

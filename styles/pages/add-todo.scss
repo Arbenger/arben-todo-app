@@ -1,0 +1,23 @@
+.add-todo {
+  .title-inputer {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-left: 6px solid $primary-bg;
+    border-radius: 3px;
+    padding: spacing(2);
+    font-size: 20px;
+    margin-bottom: spacing(1);
+  }
+  .btn-submit {
+    color: white;
+    background-color: $primary-bg;
+    border: none;
+    border-radius: 3px;
+    padding: spacing(1) spacing(2);
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-bg-hover;
+    }
+  }
+}
